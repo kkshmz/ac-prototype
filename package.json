@@ -25,7 +25,6 @@
   "scripts": {
     "dev": "parcel ./src/index.html",
     "devb": "parcel build ./src/index.html/",
-    "precommit": "lint-staged",
     "pretest": "yarn run test:eslint",
     "test:eslint": "eslint src/ --ext .js --ext .jsx",
     "start": "NODE_ENV=development parcel src/index.html --open",
@@ -36,6 +35,11 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
   },
   "dependencies": {
     "react": "^16.0.0",
